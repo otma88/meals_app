@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:meals_app/screens/filters.dart';
 import 'file:///C:/Users/mario.otmacic/Desktop/Mario/flutter/meals_app/lib/screens/categories.dart';
 import 'file:///C:/Users/mario.otmacic/Desktop/Mario/flutter/meals_app/lib/screens/category_meals.dart';
 import 'package:meals_app/screens/meal_detail.dart';
+import 'package:meals_app/screens/tabs.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +24,12 @@ class MyApp extends StatelessWidget {
               body2: TextStyle(color: Color.fromRGBO(21, 51, 51, 1)),
               title: TextStyle(fontSize: 20, fontFamily: 'RobotoCondensed', fontWeight: FontWeight.bold))),
       // home: Categories(),
-      routes: {'/': (ctx) => Categories(), CategoryMeals.routeName: (ctx) => CategoryMeals(), MealDetail.routeName: (ctx) => MealDetail()},
+      routes: {
+        '/': (ctx) => Tabs(),
+        CategoryMeals.routeName: (ctx) => CategoryMeals(),
+        MealDetail.routeName: (ctx) => MealDetail(),
+        Filters.routeName: (ctx) => Filters()
+      },
     );
   }
 }
